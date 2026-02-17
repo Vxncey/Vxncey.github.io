@@ -61,3 +61,30 @@ while (true) {
 }
 
 document.write("</table>");
+
+if (results.length > 0) {
+
+    let total = 0;
+    let min = results[0];
+    let max = results[0];
+
+    for (let i = 0; i < results.length; i++) {
+        total += results[i];
+
+        if (results[i] < min) min = results[i];
+        if (results[i] > max) max = results[i];
+    }
+
+    let avg = total / results.length;
+
+    document.write("<table>");
+    document.write("<tr><th>Min</th><th>Max</th><th>Average</th><th>Total</th></tr>");
+    document.write("<tr>");
+    document.write("<td>" + min + "</td>");
+    document.write("<td>" + max + "</td>");
+    document.write("<td>" + avg + "</td>");
+    document.write("<td>" + total + "</td>");
+    document.write("</tr>");
+    document.write("</table>");
+}
+
