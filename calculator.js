@@ -3,7 +3,6 @@ let results = [];   // Store valid results only
 document.write("<table>");
 document.write("<tr><th>x</th><th>op</th><th>y</th><th>result</th></tr>");
 
-let results = [];
 let expressionCount = 1;  //just wanted to add this for user clarity purposes
 
 while (true) {
