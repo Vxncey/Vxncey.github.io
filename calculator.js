@@ -3,24 +3,28 @@ let results = [];   // Store valid results only
 document.write("<table>");
 document.write("<tr><th>x</th><th>op</th><th>y</th><th>result</th></tr>");
 
+let results = [];
+let expressionCount = 1;  //just wanted to add this for user clarity purposes
+
 while (true) {
 
-    let x = prompt("Enter first number (Cancel to stop):");
+    let x = prompt("Expression Count: " + expressionCount +
+                   "\n\nEnter first number (Cancel to stop):");
     if (x === null) break;
 
-    let operator = prompt("Enter operator (+, -, *, /, %):");
+    let operator = prompt("Expression Count: " + expressionCount +
+                          "\n\nEnter operator (+, -, *, /, %):");
     if (operator === null) break;
 
-    let y = prompt("Enter second number:");
+    let y = prompt("Expression Count: " + expressionCount +
+                   "\n\nEnter second number:");
     if (y === null) break;
 
     let result;
 
-    // Convert to numbers
     let numX = Number(x);
     let numY = Number(y);
 
-    // Check for non-numeric input
     if (isNaN(numX) || isNaN(numY)) {
         result = "wrong input number";
     }
@@ -46,7 +50,6 @@ while (true) {
                 break;
         }
 
-        // Only store valid numeric results
         if (typeof result === "number") {
             results.push(result);
         }
@@ -58,7 +61,10 @@ while (true) {
     document.write("<td>" + y + "</td>");
     document.write("<td>" + result + "</td>");
     document.write("</tr>");
+
+    expressionCount++;   // INCREMENT COUNTER
 }
+
 
 document.write("</table>");
 
